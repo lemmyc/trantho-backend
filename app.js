@@ -1,6 +1,6 @@
 import express from "express";
-import morgan from "morgan";
-// import router from "./routes/index.js";
+import morgan from "morgan"
+import router from "./src/routes/index.js";
 import cors from "cors";
 import {handleError, CustomError} from "./src/utils/Error.js";
 const app = express();
@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to Tran Tho Backend." });
 });
 
-// app.use("/api/", router)
+app.use("/api", router);
 
 app.use(function (req, res, next) {
   handleError(res, new CustomError("Route not found", 404))
