@@ -14,7 +14,7 @@ const customerSchema = new mongoose.Schema(
             required: true
         },
         dob:{
-            type: String,
+            type: Date,
             required: true
         },
         address:{
@@ -31,4 +31,4 @@ const customerSchema = new mongoose.Schema(
 	},
 );
 
-export default mongoose.model("User", customerSchema);
+export default mongoose.model("Customer", customerSchema);
