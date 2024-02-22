@@ -3,6 +3,7 @@ import { ROLES } from "../config/constants.js";
 import PasswordUtils from "../utils/password-utils.js";
 import User from "../models/User.js";
 import Customer from "../models/Customer.js";
+import Cart from "../models/Cart.js";
 import TokenUtils from "../utils/token-utils.js";
 import mongoose from "mongoose";
 export const signUpCustomer = async (req, res) => {
@@ -26,7 +27,9 @@ export const signUpCustomer = async (req, res) => {
       user: new User(newUser)._id,
     });
     const userData = newUser.toJSON();
-
+    await Cart.create({
+      customer: new User(newUser)._id,
+    })
     // console.log(newCustomer);
     const accessToken = TokenUtils.generateAccessToken(userData);
     const refreshToken = TokenUtils.generateRefreshToken(userData);
