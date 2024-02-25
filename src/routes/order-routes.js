@@ -1,17 +1,27 @@
 import { Router } from "express";
-import { addOrderByCustomer, addOrderByStaff } from "../controllers/order-controllers.js";
+import {
+  getOrderById,
+
+  getAllOrdersByCustomer,
+  addOrderByCustomer,
+
+  getAllOrdersByStaffWithUserId,
+  addOrderByStaff,
+  editOrderByStaff,
+} from "../controllers/order-controllers.js";
 
 const orderRoutes = Router();
 
 // orderRoutes.route("/")
 //     .get(getAllInwardNotes);
-// orderRoutes.route("/:id")
-//     .get(getInwardNoteById);
-orderRoutes.route("/customer/add")
-    .post(addOrderByCustomer);
-orderRoutes.route("/staff/add")
-    .post(addOrderByStaff);
-// orderRoutes.route("/edit/:id")
-//     .put(editInwardNote);
+orderRoutes.route("/:id").get(getOrderById);
 
+orderRoutes.route("/customer/").get(getAllOrdersByCustomer);
+orderRoutes.route("/customer/add").post(addOrderByCustomer);
+
+orderRoutes.route("/staff/add").post(addOrderByStaff);
+orderRoutes.route("/staff/edit/:id").put(editOrderByStaff);
+orderRoutes
+  .route("/staff/get-customer-orders")
+  .get(getAllOrdersByStaffWithUserId);
 export default orderRoutes;

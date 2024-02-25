@@ -30,7 +30,6 @@ export const signUpCustomer = async (req, res) => {
     await Cart.create({
       customer: new User(newUser)._id,
     })
-    // console.log(newCustomer);
     const accessToken = TokenUtils.generateAccessToken(userData);
     const refreshToken = TokenUtils.generateRefreshToken(userData);
     delete userData.password;

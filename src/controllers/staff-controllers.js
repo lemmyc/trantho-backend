@@ -22,13 +22,12 @@ export const signUpStaff = async (req, res) => {
       password: hashedPassword,
       role: ROLES.STAFF,
     });
-    const newCustomer = await Staff.create({
+    const newStaff = await Staff.create({
       ...req.body,
       user: new User(newUser)._id,
     });
     const userData = newUser.toJSON();
 
-    // console.log(newCustomer);
     const accessToken = TokenUtils.generateAccessToken(userData);
     const refreshToken = TokenUtils.generateRefreshToken(userData);
     delete userData.password;

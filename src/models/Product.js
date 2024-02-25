@@ -42,22 +42,6 @@ const productSchema = new mongoose.Schema(
             type: Date,
             required: false
         },
-        rating:[
-            {
-                userID: {
-                    type: mongoose.Schema.Types.ObjectId,
-                    ref: "User",
-                    required: true
-                },
-                starRating:{
-                    type: Number,
-                    required: true
-                },
-                ratingComment:{
-                    type: String
-                }
-            }
-        ],
         isDeleted:{
             type: Boolean,
             default: false

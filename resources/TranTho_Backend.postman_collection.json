@@ -1,0 +1,1880 @@
+{
+	"info": {
+		"_postman_id": "08cc2a57-f4c1-48e6-baae-1c58efb990f1",
+		"name": "TranTho",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11771086"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Root",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SignUp User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"trantho3\",\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/user/signup",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LogIn User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQ3MzU3OGI0NDg5MTUwYWIwMDFhOGQiLCJ1c2VybmFtZSI6InRyYW50aG8xMyIsInBhc3N3b3JkIjoiJDJiJDEwJGlyUTdKa1BhMjhkSFBLbUtyaUtCbk9sUGYuOGsvV05jbkY0NXc5d1lBNjFJQlNFTGU2VmJ5Iiwicm9sZSI6IlVTRVIiLCJjcmVhdGVkQXQiOiIyMDI0LTAyLTIyVDExOjUyOjI0Ljc5MVoiLCJ1cGRhdGVkQXQiOiIyMDI0LTAyLTIyVDExOjUyOjI0Ljc5MVoiLCJfX3YiOjAsImlhdCI6MTcwODg0OTMxNiwiZXhwIjoxNzA4ODUwMjE2fQ.MfxOFrSQYAWF3nu8CZ_jjOlTZALJYeW7uQm3yzjezZs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"trantho13\",\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/user/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Validate User Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWNmMTQwYzExMmFiZmJlYmU0NWNkM2EiLCJ1c2VybmFtZSI6InRyYW50aG8xIiwicGFzc3dvcmQiOiIkMmIkMTAkMDBROGd4RVEzQkR3YzREbDQ5WDFNdU53OGFpNGs3dS5JRXdEcDR3dG5FV3pDVkYzN21sYTYiLCJyb2xlIjoiVVNFUiIsImNyZWF0ZWRBdCI6IjIwMjQtMDItMTZUMDc6NTE6NDAuNzIwWiIsInVwZGF0ZWRBdCI6IjIwMjQtMDItMTZUMDc6NTE6NDAuNzIwWiIsIl9fdiI6MCwiaWF0IjoxNzA4MDc0NjM5LCJleHAiOjE3MDgwNzU1Mzl9.ZZTmMwgW9khlSaba19Iu8k0nEuKBiGI5JVNY_oi2ER4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "role",
+								"value": "USER",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"trantho1\",\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/user/validate",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"validate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LogOut User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"trantho1\",\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/user/logout",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Request Refresh Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWNmMTQwYzExMmFiZmJlYmU0NWNkM2EiLCJpYXQiOjE3MDgwNzgxMTUsImV4cCI6MTcwODA3ODE0NX0.FL_o9NRm2-WV6cH74e3UUM0AiaTenV0cUj3q4XMFb3k\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/user/refresh-token",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "SignUp Customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"trantho13\",\r\n    \"password\": \"123\",\r\n    \"email\": \"tho13@gmail.com\",\r\n    \"fullName\": \"Tran Tho 13\",\r\n    \"dob\": \"01/01/2002\",\r\n    \"address\": \"Can Tho\",\r\n    \"phoneNumber\": \"0987654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/customer/signup",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"customer",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Customer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"tho12@gmail.com\",\r\n    \"fullName\": \"Tran Tho\",\r\n    \"dob\": \"01/01/2002\",\r\n    \"address\": \"Can Tho\",\r\n    \"phoneNumber\": \"0987654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/customer/65d06dbb0db21a86323ef844",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"customer",
+								"65d06dbb0db21a86323ef844"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Customer By ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"trantho\",\r\n    \"password\": \"123\",\r\n    \"email\": \"tho@gmail.com\",\r\n    \"fullName\": \"Tran Tho\",\r\n    \"dob\": \"01/01/2002\",\r\n    \"address\": \"Can Tho\",\r\n    \"phoneNumber\": \"0987654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/customer/65d06dbb0db21a86323ef841",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"customer",
+								"65d06dbb0db21a86323ef841"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Customers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"trantho\",\r\n    \"password\": \"123\",\r\n    \"email\": \"tho@gmail.com\",\r\n    \"fullName\": \"Tran Tho\",\r\n    \"dob\": \"01/01/2002\",\r\n    \"address\": \"Can Tho\",\r\n    \"phoneNumber\": \"0987654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/customer/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"customer",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Staff",
+			"item": [
+				{
+					"name": "SignUp Staff",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"trantho_staff2\",\r\n    \"password\": \"123\",\r\n    \"email\": \"tho_staff2@gmail.com\",\r\n    \"fullName\": \"Tran Tho\",\r\n    \"dob\": \"01/01/2002\",\r\n    \"address\": \"Can Tho\",\r\n    \"phoneNumber\": \"0987654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/staff/signup",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"staff",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Staff",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"email\": \"tho_update@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/staff/65d07a08cf05fdf00c34d9a1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"staff",
+								"65d07a08cf05fdf00c34d9a1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Staff By ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"trantho\",\r\n    \"password\": \"123\",\r\n    \"email\": \"tho@gmail.com\",\r\n    \"fullName\": \"Tran Tho\",\r\n    \"dob\": \"01/01/2002\",\r\n    \"address\": \"Can Tho\",\r\n    \"phoneNumber\": \"0987654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/staff/65d07a08cf05fdf00c34d9a1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"staff",
+								"65d07a08cf05fdf00c34d9a1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Staffs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"trantho\",\r\n    \"password\": \"123\",\r\n    \"email\": \"tho@gmail.com\",\r\n    \"fullName\": \"Tran Tho\",\r\n    \"dob\": \"01/01/2002\",\r\n    \"address\": \"Can Tho\",\r\n    \"phoneNumber\": \"0987654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/staff/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"staff",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Brand",
+			"item": [
+				{
+					"name": "Add Brand",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"brandName\":\"Intel\",\r\n    \"brandDesc\": \"Intel Desc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/brand/add",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"brand",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Brand",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"brandName\":\"Intel Corp.\",\r\n    \"brandDesc\": \"Intel Corp. Desc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/brand/edit/65d3184a11b5a59e4f3cad97",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"brand",
+								"edit",
+								"65d3184a11b5a59e4f3cad97"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Brand By ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"trantho\",\r\n    \"password\": \"123\",\r\n    \"email\": \"tho@gmail.com\",\r\n    \"fullName\": \"Tran Tho\",\r\n    \"dob\": \"01/01/2002\",\r\n    \"address\": \"Can Tho\",\r\n    \"phoneNumber\": \"0987654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/brand/65d3184a11b5a59e4f3cad97",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"brand",
+								"65d3184a11b5a59e4f3cad97"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Brands",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"trantho\",\r\n    \"password\": \"123\",\r\n    \"email\": \"tho@gmail.com\",\r\n    \"fullName\": \"Tran Tho\",\r\n    \"dob\": \"01/01/2002\",\r\n    \"address\": \"Can Tho\",\r\n    \"phoneNumber\": \"0987654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/brand/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"brand",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rating",
+			"item": [
+				{
+					"name": "Add Rating",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerId\":\"65d73578b4489150ab001a8d\",\r\n    \"orderId\": \"65daf193008e459ef7ca69ff\",\r\n    \"productId\": \"65d326ff361a909a0fcfa90e\",\r\n    \"ratingDate\": \"02/25/2024\",\r\n    \"ratingStars\": \"4\",\r\n    \"ratingComment\": \"Tốt\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/rating/add",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"rating",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Rating",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerId\":\"65d73578b4489150ab001a8d\",\r\n    \"orderId\": \"65daf193008e459ef7ca69ff\",\r\n    \"productId\": \"65d326ff361a909a0fcfa90e\",\r\n    \"ratingStars\": \"5\",\r\n    \"ratingComment\": \"Rất Tốt\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/rating/edit/65db1cfb3b5540ba5290785c",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"rating",
+								"edit",
+								"65db1cfb3b5540ba5290785c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Rating",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerId\":\"65d73578b4489150ab001a8d\",\r\n    \"orderId\": \"65daf193008e459ef7ca69ff\",\r\n    \"productId\": \"65d326ff361a909a0fcfa90e\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/rating/delete/65db1cfb3b5540ba5290785c",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"rating",
+								"delete",
+								"65db1cfb3b5540ba5290785c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Rating by Customer",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerId\":\"65d73578b4489150ab001a8d\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/rating/customer-rating",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"rating",
+								"customer-rating"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Brands",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"trantho\",\r\n    \"password\": \"123\",\r\n    \"email\": \"tho@gmail.com\",\r\n    \"fullName\": \"Tran Tho\",\r\n    \"dob\": \"01/01/2002\",\r\n    \"address\": \"Can Tho\",\r\n    \"phoneNumber\": \"0987654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/brand/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"brand",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Add Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productName\":\"Intel Core i5\",\r\n    \"brandId\": \"65d3184a11b5a59e4f3cad97\",\r\n    \"productDesc\": \"Intel Core i5 Desc\",\r\n    \"productImageUrl\": \"https://hanoicomputercdn.com/media/product/52613_intel_core_i5_10500.jpg\",\r\n    \"productPrice\":\"10000000\",\r\n    \"productQuantity\":\"20\",\r\n    \"warrantyPeriod\":\"12\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/product/add",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"product",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productName\":\"Intel Core i3\",\r\n    \"brandId\": \"65d3184a11b5a59e4f3cad97\",\r\n    \"productDesc\": \"Intel Core i3 Desc\",\r\n    \"productImageUrl\": \"https://hanoicomputercdn.com/media/product/58736_cpu_intel_core_i3_10105.jpg\",\r\n    \"productPrice\":\"5000000\",\r\n    \"productQuantity\":\"20\",\r\n    \"warrantyPeriod\":\"12\",\r\n    \"discountStartDate\":\" 02/19/2024\",\r\n    \"discountEndDate\":\" 02/26/2024\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/product/edit/65d326ff361a909a0fcfa90e",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"product",
+								"edit",
+								"65d326ff361a909a0fcfa90e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product By ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"trantho\",\r\n    \"password\": \"123\",\r\n    \"email\": \"tho@gmail.com\",\r\n    \"fullName\": \"Tran Tho\",\r\n    \"dob\": \"01/01/2002\",\r\n    \"address\": \"Can Tho\",\r\n    \"phoneNumber\": \"0987654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/product/65d326ff361a909a0fcfa90e",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"product",
+								"65d326ff361a909a0fcfa90e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product By ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"trantho\",\r\n    \"password\": \"123\",\r\n    \"email\": \"tho@gmail.com\",\r\n    \"fullName\": \"Tran Tho\",\r\n    \"dob\": \"01/01/2002\",\r\n    \"address\": \"Can Tho\",\r\n    \"phoneNumber\": \"0987654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/product/delete/65d326ff361a909a0fcfa90e",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"product",
+								"delete",
+								"65d326ff361a909a0fcfa90e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/product/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"product",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Manufactor",
+			"item": [
+				{
+					"name": "Add Manufactor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"manufactorName\":\"Tin Học Ngôi Sao\",\r\n    \"manufactorPhoneNumber\":\"0999444555\",\r\n    \"manufactorEmail\":\"tinhocngoisao@gmail.com\",\r\n    \"manufactorAddress\": \"HCM\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/manufactor/add",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"manufactor",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Manufactor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"manufactorName\":\"Long Van 2\",\r\n    \"manufactorPhoneNumber\":\"0999888666\",\r\n    \"manufactorEmail\":\"longvan@gmail.com\",\r\n    \"manufactorAddress\": \"HCM\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/manufactor/edit/65d5acf59af367e0b5c33668",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"manufactor",
+								"edit",
+								"65d5acf59af367e0b5c33668"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Manufactor By ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"trantho\",\r\n    \"password\": \"123\",\r\n    \"email\": \"tho@gmail.com\",\r\n    \"fullName\": \"Tran Tho\",\r\n    \"dob\": \"01/01/2002\",\r\n    \"address\": \"Can Tho\",\r\n    \"phoneNumber\": \"0987654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/manufactor/65d5acf59af367e0b5c33668",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"manufactor",
+								"65d5acf59af367e0b5c33668"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Manufactors",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"trantho\",\r\n    \"password\": \"123\",\r\n    \"email\": \"tho@gmail.com\",\r\n    \"fullName\": \"Tran Tho\",\r\n    \"dob\": \"01/01/2002\",\r\n    \"address\": \"Can Tho\",\r\n    \"phoneNumber\": \"0987654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/manufactor/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"manufactor",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Inward Note",
+			"item": [
+				{
+					"name": "Add Inward Note",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"staffId\":\"65d07a08cf05fdf00c34d9a1\",\r\n    \"manufactorId\":\"65d5af874e06d880733733cf\",\r\n    \"inwardNoteDate\":\"02/21/2024\",\r\n    \"goods\":[\r\n        {\r\n            \"product\": \"65d326ff361a909a0fcfa90e\",\r\n            \"productImportPrice\":\"5000000\",\r\n            \"productImportQuantity\":\"1\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/inward-note/add",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"inward-note",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"staffId\":\"65d07a08cf05fdf00c34d9a1\",\r\n    \"manufactorId\":\"65d5af874e06d880733733cf\",\r\n    \"inwardNoteDate\":\"02/21/2024\",\r\n    \"goods\":[\r\n        {\r\n            \"product\": \"65d326ff361a909a0fcfa90e\",\r\n            \"productImportPrice\":\"5000000\",\r\n            \"productImportQuantity\":\"1\"\r\n        },\r\n        {\r\n            \"product\": \"65d5c889a335ad13880b8702\",\r\n            \"productImportPrice\":\"10000000\",\r\n            \"productImportQuantity\":\"1\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/inward-note/edit/65d5ca539b4a23827b6f3944",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"inward-note",
+								"edit",
+								"65d5ca539b4a23827b6f3944"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Inward Note By ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"trantho\",\r\n    \"password\": \"123\",\r\n    \"email\": \"tho@gmail.com\",\r\n    \"fullName\": \"Tran Tho\",\r\n    \"dob\": \"01/01/2002\",\r\n    \"address\": \"Can Tho\",\r\n    \"phoneNumber\": \"0987654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/inward-note/65d5cff86099d364237868ee",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"inward-note",
+								"65d5cff86099d364237868ee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product By ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"trantho\",\r\n    \"password\": \"123\",\r\n    \"email\": \"tho@gmail.com\",\r\n    \"fullName\": \"Tran Tho\",\r\n    \"dob\": \"01/01/2002\",\r\n    \"address\": \"Can Tho\",\r\n    \"phoneNumber\": \"0987654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/product/delete/65d326ff361a909a0fcfa90e",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"product",
+								"delete",
+								"65d326ff361a909a0fcfa90e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Inward Notes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"trantho\",\r\n    \"password\": \"123\",\r\n    \"email\": \"tho@gmail.com\",\r\n    \"fullName\": \"Tran Tho\",\r\n    \"dob\": \"01/01/2002\",\r\n    \"address\": \"Can Tho\",\r\n    \"phoneNumber\": \"0987654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/inward-note/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"inward-note",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "Add Item to Cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQ3MzU3OGI0NDg5MTUwYWIwMDFhOGQiLCJ1c2VybmFtZSI6InRyYW50aG8xMyIsInBhc3N3b3JkIjoiJDJiJDEwJGlyUTdKa1BhMjhkSFBLbUtyaUtCbk9sUGYuOGsvV05jbkY0NXc5d1lBNjFJQlNFTGU2VmJ5Iiwicm9sZSI6IlVTRVIiLCJjcmVhdGVkQXQiOiIyMDI0LTAyLTIyVDExOjUyOjI0Ljc5MVoiLCJ1cGRhdGVkQXQiOiIyMDI0LTAyLTIyVDExOjUyOjI0Ljc5MVoiLCJfX3YiOjAsImlhdCI6MTcwODYxMTQzNSwiZXhwIjoxNzA4NjEyMzM1fQ.j8DeK5EyzCg7GxIAsrEQdJ0lhXfZ4LCeCXXDl6HGy1k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"productId\":\"65d5c889a335ad13880b8702\",\r\n   \"productQuantiy\": \"200\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/cart/add-item",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"cart",
+								"add-item"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQ3MzU3OGI0NDg5MTUwYWIwMDFhOGQiLCJ1c2VybmFtZSI6InRyYW50aG8xMyIsInBhc3N3b3JkIjoiJDJiJDEwJGlyUTdKa1BhMjhkSFBLbUtyaUtCbk9sUGYuOGsvV05jbkY0NXc5d1lBNjFJQlNFTGU2VmJ5Iiwicm9sZSI6IlVTRVIiLCJjcmVhdGVkQXQiOiIyMDI0LTAyLTIyVDExOjUyOjI0Ljc5MVoiLCJ1cGRhdGVkQXQiOiIyMDI0LTAyLTIyVDExOjUyOjI0Ljc5MVoiLCJfX3YiOjAsImlhdCI6MTcwODYxMjEwMywiZXhwIjoxNzA4NjEzMDAzfQ.uwUFphJC6uiK2imzCFTuPub0EpbgLFTcG_8z8XbG5Vw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cartItems\": [\r\n    {\r\n      \"product\": \"65d326ff361a909a0fcfa90e\",\r\n      \"productCartQuantity\": 3\r\n    },\r\n    {\r\n      \"product\": \"65d5c889a335ad13880b8702\",\r\n      \"productCartQuantity\": 5\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/cart/edit/65d73578b4489150ab001a93",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"cart",
+								"edit",
+								"65d73578b4489150ab001a93"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Cart",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQ3MzU3OGI0NDg5MTUwYWIwMDFhOGQiLCJ1c2VybmFtZSI6InRyYW50aG8xMyIsInBhc3N3b3JkIjoiJDJiJDEwJGlyUTdKa1BhMjhkSFBLbUtyaUtCbk9sUGYuOGsvV05jbkY0NXc5d1lBNjFJQlNFTGU2VmJ5Iiwicm9sZSI6IlVTRVIiLCJjcmVhdGVkQXQiOiIyMDI0LTAyLTIyVDExOjUyOjI0Ljc5MVoiLCJ1cGRhdGVkQXQiOiIyMDI0LTAyLTIyVDExOjUyOjI0Ljc5MVoiLCJfX3YiOjAsImlhdCI6MTcwODYxNTkzNCwiZXhwIjoxNzA4NjE2ODM0fQ.WBN_RRAYrWL3pJAcEXUdCoJevzr3ZE45Q6hnVdJH-4o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"trantho\",\r\n    \"password\": \"123\",\r\n    \"email\": \"tho@gmail.com\",\r\n    \"fullName\": \"Tran Tho\",\r\n    \"dob\": \"01/01/2002\",\r\n    \"address\": \"Can Tho\",\r\n    \"phoneNumber\": \"0987654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/cart/get-user-cart",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"cart",
+								"get-user-cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Card",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQ3MzU3OGI0NDg5MTUwYWIwMDFhOGQiLCJ1c2VybmFtZSI6InRyYW50aG8xMyIsInBhc3N3b3JkIjoiJDJiJDEwJGlyUTdKa1BhMjhkSFBLbUtyaUtCbk9sUGYuOGsvV05jbkY0NXc5d1lBNjFJQlNFTGU2VmJ5Iiwicm9sZSI6IlVTRVIiLCJjcmVhdGVkQXQiOiIyMDI0LTAyLTIyVDExOjUyOjI0Ljc5MVoiLCJ1cGRhdGVkQXQiOiIyMDI0LTAyLTIyVDExOjUyOjI0Ljc5MVoiLCJfX3YiOjAsImlhdCI6MTcwODYxNTkzNCwiZXhwIjoxNzA4NjE2ODM0fQ.WBN_RRAYrWL3pJAcEXUdCoJevzr3ZE45Q6hnVdJH-4o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/cart/delete/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"cart",
+								"delete",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Inward Notes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"trantho\",\r\n    \"password\": \"123\",\r\n    \"email\": \"tho@gmail.com\",\r\n    \"fullName\": \"Tran Tho\",\r\n    \"dob\": \"01/01/2002\",\r\n    \"address\": \"Can Tho\",\r\n    \"phoneNumber\": \"0987654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/inward-note/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"inward-note",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Customer",
+					"item": [
+						{
+							"name": "Add Order without discount",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQ3MzU3OGI0NDg5MTUwYWIwMDFhOGQiLCJ1c2VybmFtZSI6InRyYW50aG8xMyIsInBhc3N3b3JkIjoiJDJiJDEwJGlyUTdKa1BhMjhkSFBLbUtyaUtCbk9sUGYuOGsvV05jbkY0NXc5d1lBNjFJQlNFTGU2VmJ5Iiwicm9sZSI6IlVTRVIiLCJjcmVhdGVkQXQiOiIyMDI0LTAyLTIyVDExOjUyOjI0Ljc5MVoiLCJ1cGRhdGVkQXQiOiIyMDI0LTAyLTIyVDExOjUyOjI0Ljc5MVoiLCJfX3YiOjAsImlhdCI6MTcwODg0OTMxNiwiZXhwIjoxNzA4ODUwMjE2fQ.MfxOFrSQYAWF3nu8CZ_jjOlTZALJYeW7uQm3yzjezZs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"orderDate\":\"02/23/2024\",\r\n    \"orderGoods\":[\r\n        {\r\n            \"product\": \"65d326ff361a909a0fcfa90e\",\r\n            \"productOrderOriginalPrice\":\"5000000\",\r\n            \"productOrderQuantity\":\"1\"\r\n        }\r\n    ],\r\n    \"orderDeliveryAddress\":\"Dia chi giao hang\",\r\n    \"orderPaymentMethod\":\"CASH_ON_DELIVERY\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5000/api/order/customer/add",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"order",
+										"customer",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Order with discount",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQ3MzU3OGI0NDg5MTUwYWIwMDFhOGQiLCJ1c2VybmFtZSI6InRyYW50aG8xMyIsInBhc3N3b3JkIjoiJDJiJDEwJGlyUTdKa1BhMjhkSFBLbUtyaUtCbk9sUGYuOGsvV05jbkY0NXc5d1lBNjFJQlNFTGU2VmJ5Iiwicm9sZSI6IlVTRVIiLCJjcmVhdGVkQXQiOiIyMDI0LTAyLTIyVDExOjUyOjI0Ljc5MVoiLCJ1cGRhdGVkQXQiOiIyMDI0LTAyLTIyVDExOjUyOjI0Ljc5MVoiLCJfX3YiOjAsImlhdCI6MTcwODcwMTM4MCwiZXhwIjoxNzA4NzAyMjgwfQ._Sm5hdiJm6uweRr2lixhipcEf0WAJtVyAhfMrxgbBVE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"orderDate\":\"02/23/2024\",\r\n    \"orderGoods\":[\r\n        {\r\n            \"product\": \"65d326ff361a909a0fcfa90e\",\r\n            \"productOrderOriginalPrice\":\"5000000\",\r\n            \"productOrderDiscountedPrice\":\"4500000\",\r\n            \"productOrderQuantity\":\"2\"\r\n        }\r\n    ],\r\n    \"orderDeliveryAddress\":\"Dia chi giao hang\",\r\n    \"orderPaymentMethod\":\"CASH_ON_DELIVERY\",\r\n    \"orderNote\":\"Giao nhanh dum\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5000/api/order/customer/add",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"order",
+										"customer",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Orders",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWQ3MzU3OGI0NDg5MTUwYWIwMDFhOGQiLCJ1c2VybmFtZSI6InRyYW50aG8xMyIsInBhc3N3b3JkIjoiJDJiJDEwJGlyUTdKa1BhMjhkSFBLbUtyaUtCbk9sUGYuOGsvV05jbkY0NXc5d1lBNjFJQlNFTGU2VmJ5Iiwicm9sZSI6IlVTRVIiLCJjcmVhdGVkQXQiOiIyMDI0LTAyLTIyVDExOjUyOjI0Ljc5MVoiLCJ1cGRhdGVkQXQiOiIyMDI0LTAyLTIyVDExOjUyOjI0Ljc5MVoiLCJfX3YiOjAsImlhdCI6MTcwODg0OTMxNiwiZXhwIjoxNzA4ODUwMjE2fQ.MfxOFrSQYAWF3nu8CZ_jjOlTZALJYeW7uQm3yzjezZs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5000/api/order/customer/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"order",
+										"customer",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Staff",
+					"item": [
+						{
+							"name": "Add Order without discount",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"orderDate\":\"02/23/2024\",\r\n    \"customerId\": \"65d73578b4489150ab001a8d\",\r\n    \"orderGoods\":[\r\n        {\r\n            \"product\": \"65d326ff361a909a0fcfa90e\",\r\n            \"productOrderOriginalPrice\":\"5000000\",\r\n            \"productOrderQuantity\":\"1\"\r\n        }\r\n    ],\r\n    \"orderDeliveryAddress\":\"Dia chi giao hang\",\r\n    \"orderPaymentMethod\":\"CASH_ON_DELIVERY\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5000/api/order/staff/add",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"order",
+										"staff",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Order with discount",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"orderDate\":\"02/23/2024\",\r\n    \"customerId\": \"65d73578b4489150ab001a8d\",\r\n    \"orderGoods\":[\r\n        {\r\n            \"product\": \"65d326ff361a909a0fcfa90e\",\r\n            \"productOrderOriginalPrice\":\"5000000\",\r\n            \"productOrderDiscountedPrice\":\"4500000\",\r\n            \"productOrderQuantity\":\"3\"\r\n        }\r\n    ],\r\n    \"orderDeliveryAddress\":\"Dia chi giao hang\",\r\n    \"orderPaymentMethod\":\"CASH_ON_DELIVERY\",\r\n    \"orderNote\":\"Giao nhanh dum\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5000/api/order/staff/add",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"order",
+										"staff",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit Order",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"orderDate\":\"02/23/2024\",\r\n    \"customerId\": \"65d73578b4489150ab001a8d\",\r\n    \"orderStatus\": \"DELIVERING\",\r\n    \"orderGoods\":[\r\n        {\r\n            \"product\": \"65d326ff361a909a0fcfa90e\",\r\n            \"productOrderOriginalPrice\":\"5000000\",\r\n            \"productOrderDiscountedPrice\":\"4500000\",\r\n            \"productOrderQuantity\":\"1\"\r\n        },\r\n        {\r\n            \"product\": \"65d5c889a335ad13880b8702\",\r\n            \"productOrderOriginalPrice\":\"10000000\",\r\n            \"productOrderQuantity\":\"1\"\r\n        }\r\n    ],\r\n    \"orderDeliveryAddress\":\"Dia chi giao hang\",\r\n    \"orderPaymentMethod\":\"CASH_ON_DELIVERY\",\r\n    \"orderNote\":\"Giao nhanh dum\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5000/api/order/staff/edit/65daf193008e459ef7ca69ff",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"order",
+										"staff",
+										"edit",
+										"65daf193008e459ef7ca69ff"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Orders with User Id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"customerId\":\"65d73578b4489150ab001a8d\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5000/api/order/staff/get-customer-orders",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"order",
+										"staff",
+										"get-customer-orders"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get Order By ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"trantho\",\r\n    \"password\": \"123\",\r\n    \"email\": \"tho@gmail.com\",\r\n    \"fullName\": \"Tran Tho\",\r\n    \"dob\": \"01/01/2002\",\r\n    \"address\": \"Can Tho\",\r\n    \"phoneNumber\": \"0987654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/order/65daf193008e459ef7ca69ff",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"order",
+								"65daf193008e459ef7ca69ff"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

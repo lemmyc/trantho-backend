@@ -1,18 +1,20 @@
 import { CustomError, handleError } from "../utils/Error.js";
 import Product from "../models/Product.js";
 import Brand from "../models/Brand.js";
+import Rating from "../models/Rating.js";
 import mongoose from "mongoose";
+import Customer from "../models/Customer.js";
 export const addProduct = async (req, res) => {
   try {
     const { productName, brandId } = req.body;
 
-    const existedProduct= await Product.findOne({
+    const existedProduct = await Product.findOne({
       productName,
     });
     if (existedProduct) {
       handleError(res, new CustomError("Product Existed", 409));
       return;
-    };
+    }
 
     const existedBrand = await Brand.findById(brandId);
     if (!existedBrand) {
@@ -22,12 +24,12 @@ export const addProduct = async (req, res) => {
 
     const newProduct = await Product.create({
       brand: brandId,
-      ...req.body
+      ...req.body,
     }).then((data) => data.toJSON());
     delete newProduct.isDeleted;
     return res.status(200).json({
       data: {
-        ...newProduct
+        ...newProduct,
       },
       message: "Add new Product successfully",
       status: 200,
@@ -51,7 +53,7 @@ export const editProduct = async (req, res) => {
       },
       req.body
     );
-    if(updateResult.matchedCount === 0){
+    if (updateResult.matchedCount === 0) {
       handleError(res, new CustomError("Product not found to update", 404));
       return;
     }
@@ -75,6 +77,39 @@ export const getProductById = async (req, res) => {
     }
     const productData = existedProduct.toJSON();
     delete productData.isDeleted;
+    delete productData.__v;
+    delete productData.createdAt;
+    delete productData.updatedAt;
+
+    const existedBrand = await Brand.findById(productData.brand);
+    if (existedBrand) {
+      productData.brandName = existedBrand.brandName;
+    } else {
+      productData.brandName = "Đang cập nhật";
+    }
+
+    const existedRating = await Rating.find({
+      product: new mongoose.Types.ObjectId(productId),
+    }).lean();
+    if (existedRating) {
+      for (const rating of existedRating) {
+        const ratingCustomer = await Customer.findOne({
+          user: new mongoose.Types.ObjectId(rating.customer),
+        });
+        ratingCustomer
+          ? (rating.customerName = ratingCustomer.fullName.toString())
+          : "Khách hàng";
+        delete rating.customer;
+        delete rating.order;
+        delete rating.product;
+        delete rating.createdAt;
+        delete rating.updatedAt;
+        delete rating.__v;
+      }
+      productData.ratings = existedRating;
+    } else {
+      productData.ratings = [];
+    }
 
     return res.status(200).json({
       data: {
@@ -104,7 +139,20 @@ export const getAllProducts = async (req, res) => {
     const productList = await Product.find(filter, "", {
       skip: offset,
       limit: pageSize,
-    });
+    }).lean();
+    for (const product of productList) {
+      delete product.isDeleted;
+      delete product.__v;
+      delete product.createdAt;
+      delete product.updatedAt;
+
+      const existedBrand = await Brand.findById(product.brand);
+      if (existedBrand) {
+        product.brandName = existedBrand.brandName;
+      } else {
+        product.brandName = "Đang cập nhật";
+      }
+    }
     const totalRows = productList.length;
     return res.status(200).json({
       data: productList,
@@ -130,10 +178,10 @@ export const deleteProduct = async (req, res) => {
         _id: new mongoose.Types.ObjectId(productId),
       },
       {
-        isDeleted: true
+        isDeleted: true,
       }
     );
-    if(updateResult.matchedCount === 0){
+    if (updateResult.matchedCount === 0) {
       handleError(res, new CustomError("Product not found to delete", 404));
       return;
     }
@@ -146,4 +194,3 @@ export const deleteProduct = async (req, res) => {
     return;
   }
 };
-

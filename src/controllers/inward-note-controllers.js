@@ -178,7 +178,6 @@ export const getAllInwardNotes = async (req, res) => {
       skip: offset,
       limit: pageSize,
     }).lean();
-    console.log(typeof inwardNoteList)
     for (const note of inwardNoteList) {
       const goodsData = note.goods;
       for (const item of goodsData) {
@@ -186,7 +185,6 @@ export const getAllInwardNotes = async (req, res) => {
           (data) => data.toJSON()
         );
         item.productName = retrivedProductData.productName;
-        console.log(item)
       }
     }
     const totalRows = inwardNoteList.length;
